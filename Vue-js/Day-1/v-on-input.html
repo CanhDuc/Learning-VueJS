@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Use v-on:input</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<input type="text" v-on:input="changValue">
+	<p id="obj">{{message}}</p>
+	<script>
+		new Vue({
+			el: '#obj',
+			data:{
+				message: 'Hello World, Hello Vue.js'			
+			},
+			methods:{
+				changValue: function(event){
+					this.message = event.target.value;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

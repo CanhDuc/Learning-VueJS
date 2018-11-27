@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Teamplate VueJs</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<p id="obj">
+		{{sayHello()}}
+	</p>
+
+	<script>
+		new Vue({
+			el : '#obj',
+			data : {
+				message : 'Buoi hoc dau tien'
+			},
+			methods : {
+				sayHello : function(){
+					document.write("Xin chao moi nguoi. Buoi hoc dau tien voi Vue.js 24-11-2018");
+				}
+			}
+		})
+	</script>
+</body>
+</html>

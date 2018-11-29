@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-on</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<div id="onevent">
+		<input type="text" v-model="var1">
+		+
+		<input type="text" v-model="var2">
+		=
+		<input type="text" v-model="total">
+		<br>
+		<br>
+		<button v-on:click = "result">Result</button>
+	</div>
+
+
+	<script>
+		new Vue({
+			el : '#onevent',
+			data : {
+				var1 : 0,
+				var2 : 0,
+				total : 0
+			},
+			methods : {
+				result : function(){
+					return this.total = parseInt(this.var1) + parseInt(this.var2);
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-html</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<div id="info">
+		<p>First Name : {{firstname}} </p>
+		<p>Last Name : {{lastname}}</p>
+		<p>Infomation : {{showInfo()}}</p>
+
+		<!-- {{html}} -->
+		<div v-html="htmlContent"></div>
+	</div>
+
+	<script type = "text/javascript" >
+		var vm = new Vue({
+			el : '#info',
+			data : {
+				firstname : 'Do',
+				lastname : 'Canh',
+
+				htmlContent: '<p>Hello VueJS</p>'
+			},
+			methods :{
+				showInfo: function(){
+					return 'My name is '+this.lastname+' and firstname : '+this.firstname;
+				},
+				showFirstName: function(){
+					return 'Firstname : '+this.firstname;
+				},
+				showLastName: function(){
+					return 'LastName : '+this.lastname;
+				}
+			}
+		});
+
+		// console.log(vm.showInfo());
+		// console.log(vm.firstname);
+	</script>
+</body>
+</html>

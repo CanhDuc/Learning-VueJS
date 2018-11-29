@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Watch Properties</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<div id="watch-properties">
+		Kilometers : <input type="text" v-model="kilometers">
+		Meters : <input type="text" v-model="meters">
+	</div>
+
+	<script>
+		new Vue({
+			el: '#watch-properties',
+			data : {
+				kilometers : 1,
+				meters : 1000
+			},
+			methods :{
+
+			},
+			computed :{
+
+			},
+			watch :{
+				kilometers:function(value){
+					this.kilometers = value;
+					this.meters = this.kilometers*1000;
+				},
+				meters:function(value){
+					this.meters = value;
+					this.kilometers = this.meters/1000;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

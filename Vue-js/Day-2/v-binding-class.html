@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VueJS</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<style>
+		.active{
+			background: red;
+			color : blue;
+		}
+	</style>
+
+	<div id="databinding">
+		<div v-bind:class='{active:isactive}'><h1>Binding class</h1></div>
+	</div>
+
+	<script>
+		new Vue({
+			el:'#databinding',
+			data :{
+				title : 'BINDING CLASS',
+				isactive : true  //false
+			}
+		})
+	</script>
+</body>
+</html>

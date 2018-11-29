@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue-Component</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<div id="test-component">
+		<create_component></create_component>
+	</div>
+	<div id="test-component1">
+		<create_component> </create_component>
+	</div>
+
+	<div id="obj">
+		<temp></temp>
+		<temp1></temp1>
+	</div>
+
+	<script>
+		Vue.component('create_component',{
+			template : '<div><h1> This is component </h1></div>'
+		});
+
+		var v1 = new Vue({
+			el: '#test-component',
+		})
+
+		var v2 = new Vue({
+			el: '#test-component1',
+		})
+	</script>
+
+	<script>
+		new Vue({
+			el: '#obj',
+			components: {
+				'temp' : {
+					template : '<div><h1> DEHA DEHA </h1></div>'
+				},
+				'temp1' : {
+					template : '<div><h1> VIETNAM VIETNAM </h1></div>'
+				} 
+			}
+		})
+	</script>
+</body>
+</html>

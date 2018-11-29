@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VueJS</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<style>
+         .info {
+            color: #00529B;
+            background-color: #BDE5F8;
+         }
+         div {
+            margin: 10px 0;
+            padding: 12px;
+         }
+         .active {
+            color: #4F8A10;
+            background-color: #DFF2BF;
+         }
+         .displayError{
+            color: #D8000C;
+            background-color: #FFBABA;
+         }
+      </style>
+
+	<div id="databinding">
+		<div v-bind:class='{active:isactive, displayError:hasError}'><h1>Binding class</h1></div>
+	</div>
+
+	<script>
+		new Vue({
+			el:'#databinding',
+			data :{
+				title : 'BINDING CLASS',
+				isactive : true,
+				hasError : false
+			}
+		})
+	</script>
+</body>
+</html>
